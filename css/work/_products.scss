@@ -1,0 +1,150 @@
+.products {
+    padding-top: 100px;
+
+    &__container {
+
+        h2 {
+            text-align: center;
+            font-size: 1.875rem;
+            max-width: 320px;
+            margin: auto;
+            margin-bottom: 50px;
+        }
+
+        .products-wrapper {
+            display: flex;
+            flex-direction: column;
+            
+            .options {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                list-style-type: none;
+                gap: 40px;
+                margin-bottom: 25px;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 50px;
+                    height: 50px;
+                    border: 2px solid #000;
+                    border-radius: 50%;
+                    font-family: $dancingScript;
+                    font-size: 2rem;
+                    font-weight: 700;
+                    color: #000;
+                    background-color: #fff;
+                    cursor: pointer;
+                }
+
+                .option-selected {
+                    background-color: #000;
+                    color: #fff;
+                }
+            }
+
+            .products-box {
+                margin-bottom: 60px;
+
+                .doll,
+                .garland,
+                .gifts {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+
+                    &__info {
+                        margin-bottom: 60px;
+
+                        h3 {
+                            text-align: center;
+                            margin-bottom: 30px;
+                            font-size: 1.75rem;
+                        }
+
+                        p {
+                            text-align: center;
+                            margin-bottom: 30px;
+                        }
+
+                        a {
+                            text-decoration: none;
+                            color: #000;
+                            font-weight: 700;
+                            background-color: #fff;
+                            border: 2px solid #000;
+                            padding: 10px 15px;
+                            margin: auto;
+                            display: block;
+                            width: fit-content;
+                        }
+                    }
+
+                    &__image {
+                        position: relative;
+                        margin-right: 25px;
+                        
+                        .image-container {
+                            width: 250px;
+                            height: 250px;
+                            position: relative;
+                            
+                            img {
+                                position: absolute;
+                                top: 0;
+                                left: 400px;
+                                width: 250px;
+                                height: 250px;
+                                border: 6px solid #fff;
+                                transition: left 300ms ease-in-out;
+                                box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.25);
+                            }
+
+                            .image-selected {
+                                left: 0px;
+                            }
+                        }
+
+
+                        &::after {
+                            content: '';
+                            width: 150px;
+                            height: 290px;
+                            position: absolute;
+                            top: -20px;
+                            right: 50%;
+                            transform: translateX(100%);
+                            background-color: #8CC0DE;
+                            z-index: -1;
+                        }
+
+                        &::before {
+                            content: '';
+                            width: 32px;
+                            height: 35px;
+                            background-image: url(../../images/highlight.svg);
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            position: absolute;
+                            top: -25px;
+                            left: -20px;
+
+                        }
+                    }
+                }
+
+                .garland {
+                    display: none;
+                }
+
+                .doll {
+                    display: none;
+                }
+            }
+        }
+    }
+}
