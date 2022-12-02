@@ -639,6 +639,8 @@ body {
   .footer__container {
     padding-left: 30px;
     padding-right: 30px;
+    max-width: 1400px;
+    margin: auto;
   }
 }
 .footer__container .dev {

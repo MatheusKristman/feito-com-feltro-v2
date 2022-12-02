@@ -27,6 +27,8 @@
         @include breakpoint(extraLargeScreen) {
             padding-left: 30px;
             padding-right: 30px;
+            max-width: 1400px;
+            margin: auto;
         }
 
         .dev {
