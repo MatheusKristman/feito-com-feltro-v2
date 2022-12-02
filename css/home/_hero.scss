@@ -1,5 +1,15 @@
 .hero {
     padding-top: 100px;
+    padding-bottom: 155px;
+
+    @include breakpoint(largeScreen) {
+        padding-top: 200px;
+        padding-bottom: 172px;
+    }
+
+    @include breakpoint(extraLargeScreen) {
+        padding-top: 140px;
+    }
 
     &__container {
         display: flex;
@@ -7,19 +17,71 @@
         align-items: center;
         gap: 50px;
 
+        @include breakpoint(tablet) {
+            align-items: flex-end;
+        }
+
+        @include breakpoint(smallScreen) {
+            gap: 0px;
+        }
+
+        @include breakpoint(largeScreen) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
         .hero-info {
             text-align: center;
+
+            @include breakpoint(tablet) {
+                text-align: left;
+                width: 100%;
+            }
+
+            @include breakpoint(extraLargeScreen) {
+                margin-bottom: 50px;
+            }
 
             h1 {
                 font-size: 2.2rem;
                 max-width: 300px;
                 margin: 0 auto 50px auto;
+                opacity: 0;
+                animation: fadeRight 1500ms ease forwards;
+
+                @include breakpoint(tablet) {
+                    margin: 0 0 50px 0;
+                }
+
+                @include breakpoint(smallScreen) {
+                    font-size: 3.125rem;
+                    max-width: 400px;
+                }
+
+                @include breakpoint(largeScreen) {
+                    font-size: 3.75rem;
+                }
+
+                @include breakpoint(extraLargeScreen) {
+                    max-width: 500px;
+                }
             }
 
             p {
                 font-size: 1.125rem;
                 line-height: 25px;
                 margin-bottom: 50px;
+                max-width: 500px;
+                opacity: 0;
+                animation: fadeRight 1500ms ease 700ms forwards;
+
+                @include breakpoint(largeScreen) {
+                    font-size: 1.25rem;
+                }
+
+                @include breakpoint(extraLargeScreen) {
+                    max-width: 550px;
+                }
             }
 
             a {
@@ -36,6 +98,20 @@
                 width: fit-content;
                 text-decoration: none;
                 color: #000;
+                opacity: 0;
+                animation: fadeRight 1500ms ease 1400ms forwards;
+
+                @include breakpoint(tablet) {
+                    margin: 0;
+                }
+
+                @include breakpoint(largeScreen) {
+                    font-size: 1.25rem;
+
+                    &:hover::after {
+                        animation: homeLinkAnim 1500ms ease infinite;
+                    }
+                }
 
                 &::after {
                     content: '';
@@ -54,11 +130,59 @@
             width: 300px;
             height: 300px;
 
+            @include breakpoint(tablet) {
+                transform: scaleX(-1);
+            }
+
+            @include breakpoint(smallScreen) {
+                max-width: 450px;
+                max-height: 450px;
+                min-width: 300px;
+                min-height: 300px;
+                width: auto;
+                height: auto;
+                margin-top: -80px;
+                margin-right: -30px;
+            }
+
+            @include breakpoint(largeScreen) {
+                min-width: 500px;
+                min-height: 500px;
+                max-width: 500px;
+                max-height: 500px;
+                transform: scaleX(1);
+            }
+
+            @include breakpoint(extraLargeScreen) {
+                min-width: 600px;
+                min-height: 600px;
+                max-width: 600px;
+                max-height: 600px;
+            }
+
             img {
                 width: 100%;
                 height: 100%;
+                opacity: 0;
+                animation: fadeDown 3500ms ease forwards;
+                pointer-events: none;
+                user-select: none;
             }
         }
     }
 
+}
+
+@keyframes homeLinkAnim {
+    0% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
 }

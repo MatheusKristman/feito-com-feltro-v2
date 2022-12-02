@@ -1,5 +1,19 @@
 .products {
     padding-top: 100px;
+    padding-bottom: 60px;
+
+    @include breakpoint(tablet) {
+        padding-bottom: 120px;
+    }
+    
+    @include breakpoint(largeScreen) {
+        padding-top: 200px;
+        padding-bottom: 100px;
+    }
+
+    @include breakpoint(extraLargeScreen) {
+        padding-top: 140px;
+    }
 
     &__container {
 
@@ -9,11 +23,37 @@
             max-width: 320px;
             margin: auto;
             margin-bottom: 50px;
+            animation: fadeLeft 2000ms ease-in-out forwards;
+
+            @include breakpoint(tablet) {
+                text-align: left;
+                margin: 0 0 50px 0;
+            }
+
+            @include breakpoint(smallScreen) {
+                font-size: 2.188rem;
+                max-width: 400px;
+            }
+
+            @include breakpoint(largeScreen) {
+                font-size: 2.813rem;
+                max-width: 450px;
+            }
         }
 
         .products-wrapper {
             display: flex;
             flex-direction: column;
+
+            @include breakpoint(tablet) {
+                position: relative;
+            }
+
+            @include breakpoint(extraLargeScreen) {
+                flex-direction: row;
+                align-items: center;
+                gap: 100px;
+            }
             
             .options {
                 width: 100%;
@@ -23,6 +63,21 @@
                 list-style-type: none;
                 gap: 40px;
                 margin-bottom: 25px;
+                opacity: 0;
+                animation: fadeRight 2000ms ease-in-out 500ms forwards;
+
+                @include breakpoint(tablet) {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: fit-content;
+                    margin: 0;
+                    flex-direction: column;
+                }
+
+                @include breakpoint(extraLargeScreen) {
+                    position: static;
+                }
 
                 li {
                     display: flex;
@@ -38,6 +93,18 @@
                     color: #000;
                     background-color: #fff;
                     cursor: pointer;
+                    transition: background-color 200ms ease-in-out, color 200ms ease;
+
+                    @include breakpoint(tablet) {
+                        width: 60px;
+                        height: 60px;
+                        font-size: 2.5rem;
+                    }
+
+                    @include breakpoint(smallScreen) {
+                        width: 77px;
+                        height: 77px;
+                    }
                 }
 
                 .option-selected {
@@ -47,7 +114,10 @@
             }
 
             .products-box {
-                margin-bottom: 60px;
+
+                @include breakpoint(extraLargeScreen) {
+                    width: 100%;
+                }
 
                 .doll,
                 .garland,
@@ -56,41 +126,108 @@
                     flex-direction: column;
                     align-items: flex-end;
 
+                    @include breakpoint(extraLargeScreen) {
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+
                     &__info {
                         margin-bottom: 60px;
+
+
+                        @include breakpoint(tablet) {
+                            width: 100%;
+                        }
+
+                        @include breakpoint(smallScreen) {
+                            height: 280px;
+                        }
+
+                        @include breakpoint(extraLargeScreen) {
+                            margin-bottom: 0;
+                        }
 
                         h3 {
                             text-align: center;
                             margin-bottom: 30px;
                             font-size: 1.75rem;
+                            opacity: 0;
+                            animation: fadeUp 1000ms ease forwards;
+
+                            @include breakpoint(tablet) {
+                                text-align: left;
+                            }
+
+                            @include breakpoint(largeScreen) {
+                                font-size: 2.188rem;
+                            }
                         }
 
                         p {
+                            font-size: 1rem;
                             text-align: center;
                             margin-bottom: 30px;
+                            opacity: 0;
+                            animation: fadeUp 1000ms ease 500ms forwards;
+
+                            @include breakpoint(tablet) {
+                                text-align: left;
+                            }
+
+                            @include breakpoint(smallScreen) {
+                                max-width: 380px;
+                            }
                         }
 
                         a {
                             text-decoration: none;
                             color: #000;
                             font-weight: 700;
+                            font-size: 1rem;
                             background-color: #fff;
                             border: 2px solid #000;
                             padding: 10px 15px;
                             margin: auto;
                             display: block;
                             width: fit-content;
+                            opacity: 0;
+                            animation: fadeUp 1000ms ease 1000ms forwards;
+
+                            @include breakpoint(tablet) {
+                                margin: 0;
+                            }
                         }
                     }
 
                     &__image {
                         position: relative;
                         margin-right: 25px;
+                        opacity: 0;
+                        animation: fadeLeftImg 1000ms ease-in-out 1500ms forwards;
+
+                        @include breakpoint(smallScreen) {
+                            margin-right: 35px;
+                        }
+
+                        @include breakpoint(extraLargeScreen) {
+                            margin-right: 50px;
+                        }
                         
                         .image-container {
                             width: 250px;
                             height: 250px;
                             position: relative;
+
+                            @include breakpoint(smallScreen) {
+                                width: 370px;
+                                height: 370px;
+                            }
+
+                            @include breakpoint(largeScreen) {
+                                width: 440px;
+                                height: 440px;
+                            }
                             
                             img {
                                 position: absolute;
@@ -99,8 +236,25 @@
                                 width: 250px;
                                 height: 250px;
                                 border: 6px solid #fff;
-                                transition: left 300ms ease-in-out;
+                                transition: left 1000ms ease-in-out;
                                 box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.25);
+                                pointer-events: none;
+                                
+                                @include breakpoint(smallScreen) {
+                                    width: 370px;
+                                    height: 370px;
+                                    left: 500px;
+                                }
+
+                                @include breakpoint(largeScreen) {
+                                    left: 600px;
+                                    width: 440px;
+                                    height: 440px;
+                                }
+
+                                @include breakpoint(extraLargeScreen) {
+                                    left: 50vw;
+                                }
                             }
 
                             .image-selected {
@@ -119,11 +273,23 @@
                             transform: translateX(100%);
                             background-color: #8CC0DE;
                             z-index: -1;
+
+                            @include breakpoint(smallScreen) {
+                                width: 220px;
+                                height: 430px;
+                                top: -30px;
+                            }
+
+                            @include breakpoint(largeScreen) {
+                                width: 270px;
+                                height: 510px;
+                                top: -35px;
+                            }
                         }
 
                         &::before {
                             content: '';
-                            width: 32px;
+                            width: 33px;
                             height: 35px;
                             background-image: url(../../images/highlight.svg);
                             background-size: cover;
@@ -133,6 +299,19 @@
                             top: -25px;
                             left: -20px;
 
+                            @include breakpoint(smallScreen) {
+                                width: 56px;
+                                height: 62px;
+                                top: -50px;
+                                left: -43px;
+                            }
+
+                            @include breakpoint(largeScreen) {
+                                width: 80px;
+                                height: 70px;
+                                top: -57px;
+                                left: -52px;
+                            }
                         }
                     }
                 }
@@ -141,10 +320,23 @@
                     display: none;
                 }
 
-                .doll {
+                .gifts {
                     display: none;
                 }
             }
         }
     }
 }
+
+@keyframes fadeLeftImg {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+

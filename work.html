@@ -7,33 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/cbaee6dbc6.js" crossorigin="anonymous"></script>
-    <title>Feito com Feltro</title>
+    <title>Feito com Feltro | Meu Trabalho</title>
 </head>
 
 <body class="work-bg">
     <!-- header -->
-    <header class="header wrapper">
+    <header id="header" class="header wrapper">
         <div class="header__container">
             <img src="./images/logo.svg" alt="Logo" class="logo">
 
-            <button class="menu-btn"><i class="fa-solid fa-bars"></i></button>
-            <div class="menu closed">
-                <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+            <button id="menuBtn" class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+            <div id="menu" class="menu closed">
+                <button id="closeBtn" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
 
                 <nav class="nav">
                     <ul>
-                        <li class="selected"><a href="#">Inicio</a></li>
-                        <li><a href="#">Meu Trabalho</a></li>
-                        <li><a href="#">Sobre</a></li>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li class="selected"><a href="work.html">Meu Trabalho</a></li>
+                        <li><a href="about.html">Sobre</a></li>
                     </ul>
                 </nav>
 
-                <a class="contact-btn" href="#">Entre em contato</a>
+                <a class="contact-btn" href="https://api.whatsapp.com/send?phone=5511949120154&text=Ola!%20Vim%20do%20site%20Feito%20com%20Feltro." target="_blank" rel="noreferrer noopener">Entre em contato</a>
 
                 <div class="mobile-socials">
-                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="mailto:contato@feitocomfeltro.com.br" target="_blank" rel="noreferrer noopener"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.instagram.com/feitocomfeltro.oficial/" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/bonecaartesanal" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -46,26 +46,25 @@
 
             <div class="products-wrapper">
                 <ul class="options">
-                    <li class="option-selected">1</li>
-                    <li>2</li>
-                    <li>3</li>
+                    <li id="option1" class="option-selected">1</li>
+                    <li id="option2">2</li>
+                    <li id="option3">3</li>
                 </ul>
 
                 <div class="products-box">
-                    <div class="doll">
+                    <div id="doll" class="doll">
                         <div class="doll__info">
                             <h3>Bonecos</h3>
                             <p>
-                                Bonecos é um dos brinquedos favoritos das crianças, gostam de abraçar, brincar, dormir
-                                junto
-                                e viram seus melhores amigos. Faço com feltro de qualidade para deixar sua experiencia a
-                                melhor possivel.
+                                Seja para crianças, adultos ou colecionáveis, dar e receber um boneco se torna uma
+                                lembrança única e inestimável. Pensando nisso, confeccionamos os nossos bonecos com os
+                                melhores materiais, zelo e carinho para torna-los ainda mais especiais.
                             </p>
-                            <a href="#">Vou querer</a>
+                            <a href="https://api.whatsapp.com/send?phone=5511949120154&text=Ola!%20Vim%20do%20site%20Feito%20com%20Feltro." target="_blank" rel="noreferrer noopener" >Vou querer</a>
                         </div>
 
                         <div class="doll__image">
-                            <div class="image-container">
+                            <div id="dollImages" class="image-container">
                                 <img class="image-selected" src="./images/products/boneco1.jpg" alt="Boneco">
                                 <img src="./images/products/boneco2.jpg" alt="Boneco">
                                 <img src="./images/products/boneco3.jpg" alt="Boneco">
@@ -76,18 +75,20 @@
                         </div>
                     </div>
 
-                    <div class="garland">
+                    <div id="garland" class="garland">
                         <div class="garland__info">
                             <h3>Guirlanda</h3>
                             <p>
-                                Sempre queremos deixar nosso ambiente o mais lindo possivel, e para te ajudar com isso,
-                                faço guirlandas para decorar sua casa, podendo escolher o tema que quiser.
+                                Desde presentes até decoração, Guirlandas podem ser utilizadas para recordar, comemorar
+                                momentos, e torna-los ainda mais especiais: o nascimento de uma nova vida, o Natal, a
+                                Páscoa, entre muitos outros! Tenha o prazer de ter e dar uma Guirlanda, que simboliza
+                                saúde e ressurreição.
                             </p>
-                            <a href="#">Vou querer</a>
+                            <a href="https://api.whatsapp.com/send?phone=5511949120154&text=Ola!%20Vim%20do%20site%20Feito%20com%20Feltro." target="_blank" rel="noreferrer noopener" >Vou querer</a>
                         </div>
 
                         <div class="garland__image">
-                            <div class="image-container">
+                            <div id="garlandImages" class="image-container">
                                 <img class="image-selected" src="./images/products/guirlanda1.jpg" alt="Guirlanda">
                                 <img src="./images/products/guirlanda2.jpg" alt="Guirlanda">
                                 <img src="./images/products/guirlanda3.jpg" alt="Guirlanda">
@@ -99,18 +100,19 @@
                         </div>
                     </div>
 
-                    <div class="gifts">
+                    <div id="gifts" class="gifts">
                         <div class="gifts__info">
                             <h3>Lembrancinhas</h3>
                             <p>
                                 Presentear uma pessoa é uma forma de demonstrar carinho. Com isso em mente, faço mimos
                                 personalizados para entregar o presente ideal àquela pessoa especial na sua vida.
                             </p>
-                            <a href="#">Vou querer</a>
+                            <a href="https://api.whatsapp.com/send?phone=5511949120154&text=Ola!%20Vim%20do%20site%20Feito%20com%20Feltro." target="_blank" rel="noreferrer noopener" >Vou querer</a>
                         </div>
                         <div class="gifts__image">
-                            <div class="image-container">
-                                <img class="image-selected" src="./images/products/lembrancinha1.jpg" alt="Lembrancinhas">
+                            <div id="giftsImages" class="image-container">
+                                <img class="image-selected" src="./images/products/lembrancinha1.jpg"
+                                    alt="Lembrancinhas">
                                 <img src="./images/products/lembrancinha2.jpg" alt="Lembrancinhas">
                                 <img src="./images/products/lembrancinha3.jpg" alt="Lembrancinhas">
                             </div>
@@ -120,6 +122,9 @@
             </div>
         </div>
     </section>
+
+    <script src="./script.js"></script>
+    <script src="./work.js"></script>
 </body>
 
 </html>

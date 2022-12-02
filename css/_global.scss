@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=Roboto&display=swap');
 
+html {
+    min-height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
 body {
     font-family: $lora;
-    min-height: 100vh;
+    height: 100%;
     width: 100%;
     overflow-x: hidden;
 }
@@ -16,6 +23,23 @@ body {
 .wrapper {
     padding-left: 25px;
     padding-right: 25px;
+
+    @include breakpoint(tablet) {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    @include breakpoint(largeScreen) {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+
+    @include breakpoint(extraLargeScreen) {
+        padding-left: 30px;
+        padding-right: 30px;
+        max-width: 1400px;
+        margin: auto;
+    }
 }
 
 .home-bg {
@@ -23,11 +47,90 @@ body {
     background-position: bottom right;
     background-size: cover;
     background-repeat: no-repeat;
+
+    @include breakpoint(tablet) {
+        background-image: url(../images/bg-home-tablet.svg);
+    }
+
+    @include breakpoint(largeScreen) {
+        background-image: url(../images/bg-home-desktop.svg);
+    }
 }
 
 .work-bg {
-    background-image: url(../images/bg-work-mobile.png);
+    background-image: url(../images/bg-work-mobile.svg);
     background-position: bottom right;
     background-size: cover;
     background-repeat: no-repeat;
+
+    @include breakpoint(tablet) {
+        background-image: url(../images/bg-work-tablet.svg);
+    }
+
+    @include breakpoint(largeScreen) {
+        background-image: url(../images/bg-work-desktop.svg);
+    }
+}
+
+.about-bg {
+    background-image: url(../images/bg-about-mobile.svg);
+    background-position: bottom right;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include breakpoint(tablet) {
+        background-image: url(../images/bg-about-tablet.svg);
+    }
+
+    @include breakpoint(largeScreen) {
+        background-image: url(../images/bg-about-desktop.svg);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeLeft {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeRight {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }

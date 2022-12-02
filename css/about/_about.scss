@@ -1,0 +1,106 @@
+.about {
+    padding-top: 100px;
+    padding-bottom: 50px;
+
+    @include breakpoint(tablet) {
+        padding-bottom: 75px;
+    }
+
+    @include breakpoint(largeScreen) {
+        padding-top: 200px;
+        padding-bottom: 100px;
+    }
+
+    @include breakpoint(extraLargeScreen) {
+        padding-top: 140px;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+
+        @include breakpoint(tablet) {
+            align-items: flex-end;
+            gap: 50px;
+        }
+
+        @include breakpoint(largeScreen) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        @include breakpoint(extraLargeScreen) {
+            align-items: flex-start;
+        }
+
+        .about-info {
+            text-align: center;
+
+            @include breakpoint(tablet) {
+                text-align: left;
+                width: 100%;
+            }
+
+            h3 {
+                font-size: 1.875rem;
+                max-width: 400px;
+                margin: auto;
+                margin-bottom: 50px;
+                opacity: 0;
+                animation: fadeRight 1500ms ease forwards;
+
+                @include breakpoint(tablet) {
+                    font-size: 2.188rem;
+                    margin: 0 0 50px 0;
+                }
+
+                @include breakpoint(largeScreen) {
+                    font-size: 2.813rem;
+                    margin-bottom: 60px;
+                }
+            }
+
+            p {
+                font-size: 1rem;
+                line-height: 25px;
+                margin-bottom: 40px;
+                max-width: 450px;
+                opacity: 0;                
+                animation: fadeRight 1500ms ease 700ms forwards;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .about-image {
+            max-width: 450px;
+            display: flex;
+            justify-content: center;
+
+            @include breakpoint(tablet) {
+                justify-content: flex-end;
+            }
+
+            @include breakpoint(extraLargeScreen) {
+                max-width: 570px;
+                min-width: 570px;
+            }
+
+            img {
+                width: 90%;
+                opacity: 0;
+                animation: fadeUp 3000ms ease forwards;
+                user-select: none;
+                pointer-events: none;
+
+                @include breakpoint(tablet) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

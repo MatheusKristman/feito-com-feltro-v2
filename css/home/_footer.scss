@@ -1,0 +1,88 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+
+    @include breakpoint(largeScreen) {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+
+    @include breakpoint(extraLargeScreen) {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+
+        @include breakpoint(largeScreen) {
+            justify-content: flex-start;
+        }
+
+        @include breakpoint(extraLargeScreen) {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .dev {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            text-decoration: none;
+            color: #000;
+            font-family: $roboto;  
+            font-size: 0.75rem;
+
+            @include breakpoint(tablet) {
+                font-size: 0.875rem;
+            }
+
+            &::after {
+                content: '';
+                background-image: url(../../images/logo-mk.svg);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                width: 31px;
+                height: 15px;
+                display: block;
+
+                @include breakpoint(tablet) {
+                    width: 37px;
+                    height: 18px;
+                }
+            }
+        }
+
+        .footer-socials {
+            display: none;
+
+            @include breakpoint(smallScreen) {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+                a {
+                    width: 32px;
+                    height: 32px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #000;
+                    border-radius: 50%;
+                    text-decoration: none;
+                    color: #fff;
+
+                    i {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
