@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L6LN42VQ4S"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-L6LN42VQ4S');
+    </script>
     <link type="text/css" rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/cbaee6dbc6.js" crossorigin="anonymous"></script>
     <title>Feito com Feltro | Meu Trabalho</title>
@@ -22,9 +31,9 @@
 
                 <nav class="nav">
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li class="selected"><a href="work.html">Meu Trabalho</a></li>
-                        <li><a href="about.html">Sobre</a></li>
+                        <li><a href="/">Inicio</a></li>
+                        <li class="selected"><a href="/MeuTrabalho.html" title="MeuTrabalho">Meu Trabalho</a></li>
+                        <li><a href="/Sobre.html" title="Sobre">Sobre</a></li>
                     </ul>
                 </nav>
 
@@ -63,7 +72,7 @@
                             <a href="https://api.whatsapp.com/send?phone=5511949120154&text=Ola!%20Vim%20do%20site%20Feito%20com%20Feltro." target="_blank" rel="noreferrer noopener" >Vou querer</a>
                         </div>
 
-                        <div class="doll__image">
+                        <div id="galleryDollBtn" class="doll__image">
                             <div id="dollImages" class="image-container">
                                 <img class="image-selected" src="./images/products/boneco1.jpg" alt="Boneco">
                                 <img src="./images/products/boneco2.jpg" alt="Boneco">
@@ -87,7 +96,7 @@
                             <a href="https://api.whatsapp.com/send?phone=5511949120154&text=Ola!%20Vim%20do%20site%20Feito%20com%20Feltro." target="_blank" rel="noreferrer noopener" >Vou querer</a>
                         </div>
 
-                        <div class="garland__image">
+                        <div id="galleryGarlandBtn" class="garland__image">
                             <div id="garlandImages" class="image-container">
                                 <img class="image-selected" src="./images/products/guirlanda1.jpg" alt="Guirlanda">
                                 <img src="./images/products/guirlanda2.jpg" alt="Guirlanda">
@@ -109,7 +118,7 @@
                             </p>
                             <a href="https://api.whatsapp.com/send?phone=5511949120154&text=Ola!%20Vim%20do%20site%20Feito%20com%20Feltro." target="_blank" rel="noreferrer noopener" >Vou querer</a>
                         </div>
-                        <div class="gifts__image">
+                        <div id="galleryGiftsBtn" class="gifts__image">
                             <div id="giftsImages" class="image-container">
                                 <img class="image-selected" src="./images/products/lembrancinha1.jpg"
                                     alt="Lembrancinhas">
@@ -122,6 +131,62 @@
             </div>
         </div>
     </section>
+
+    <div id="gallery" class="gallery">
+        <button id="galleryBtnClose" class="gallery__btn-close"><i class="fa-solid fa-xmark"></i></button>
+        <div class="gallery__container">
+            <div id="galleryDoll" class="gallery__container__doll">
+                <div class="gallery-image-selected-container">
+                    <button id="dollBtnLeft" class="btn-left"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div id="galleryDollImage" class="gallery-image-selected"></div>
+                    <button id="dollBtnRight" class="btn-right"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+
+                <div id="galleryDollCarousel" class="gallery-carousel">
+                    <img src="./images/products/boneco1.jpg" alt="Boneco">
+                    <img src="./images/products/boneco2.jpg" alt="Boneco">
+                    <img src="./images/products/boneco3.jpg" alt="Boneco">
+                    <img src="./images/products/boneco4.jpg" alt="Boneco">
+                    <img src="./images/products/boneco5.jpg" alt="Boneco">
+                    <img src="./images/products/boneco6.jpg" alt="Boneco">
+                </div>
+            </div>
+
+            <div id="galleryGarland" class="gallery__container__garland">
+                <div class="gallery-image-selected-container">
+                    <button id="garlandBtnLeft" class="btn-left"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div id="galleryGarlandImage" class="gallery-image-selected"></div>
+                    <button id="garlandBtnRight" class="btn-right"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+
+                <div id="galleryGarlandCarousel" class="gallery-carousel">
+                    <img src="./images/products/guirlanda1.jpg" alt="Guirlanda">
+                    <img src="./images/products/guirlanda2.jpg" alt="Guirlanda">
+                    <img src="./images/products/guirlanda3.jpg" alt="Guirlanda">
+                    <img src="./images/products/guirlanda4.jpg" alt="Guirlanda">
+                    <img src="./images/products/guirlanda5.jpg" alt="Guirlanda">
+                    <img src="./images/products/guirlanda6.jpg" alt="Guirlanda">
+                    <img src="./images/products/guirlanda7.jpg" alt="Guirlanda">
+                </div>
+            </div>
+
+            <div id="galleryGifts" class="gallery__container__gifts">
+                <div class="gallery-image-selected-container">
+                    <button id="giftsBtnLeft" class="btn-left"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div id="galleryGiftsImage" class="gallery-image-selected"></div>
+                    <button id="giftsBtnRight" class="btn-right"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+
+                <div id="galleryGiftsCarousel" class="gallery-carousel">
+                    <img src="./images/products/lembrancinha1.jpg" alt="Lembrancinha">
+                    <img src="./images/products/lembrancinha2.jpg" alt="Lembrancinha">
+                    <img src="./images/products/lembrancinha3.jpg" alt="Lembrancinha">
+                </div>
+            </div>
+        </div>
+
+        <span class="gallery__mobile-tip">Arraste as imagens acima para poder ver todas</span>
+    </div>
 
     <script src="./script.js"></script>
     <script src="./work.js"></script>

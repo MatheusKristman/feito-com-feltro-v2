@@ -205,9 +205,13 @@
                         margin-right: 25px;
                         opacity: 0;
                         animation: fadeLeftImg 1000ms ease-in-out 1500ms forwards;
-
+                        
                         @include breakpoint(smallScreen) {
                             margin-right: 35px;
+                        }
+                        
+                        @include breakpoint(largeScreen) {
+                            cursor: pointer;
                         }
 
                         @include breakpoint(extraLargeScreen) {
@@ -340,3 +344,12 @@
     }
 }
 
+@keyframes RightImg {
+    from {
+        transform: translateX(100vw);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
